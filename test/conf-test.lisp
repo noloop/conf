@@ -23,8 +23,10 @@
             (push (test-set-conf-file) results))
     (format t "Test get-conf-full-path: ~a~%"
             (push (test-get-conf-full-path) results))
-    (format t "Test test-load-conf-file-for-hash-table: ~a~%"
+    (format t "Test load-conf-file-for-hash-table: ~a~%"
             (push (test-load-conf-file-for-hash-table) results))
+    (format t "~%Test save-conf-file: ~a~%"
+            (push (test-save-conf-file) results))
     (delete-file "/tmp/conf-test.conf")
     (format t "Test result: ~a" (every #'(lambda (el) (equal t el)) results))))
 
@@ -57,5 +59,12 @@
           (gethash :field-2 expected-hash) "value2")
     (and (equalp expected-hash (conf::load-conf-file-for-hash-table conf)))))
 
-;;(defun test-replace-conf-fields ())
-;;(defun test-save-conf-file ())
+(defun test-save-conf-file ()
+  (let ((conf (init-conf "~/.conf/" "some.conf"))
+        (expected-hash (make-hash-table)))
+    (set-conf-directory conf "/tmp/")
+    (set-conf-file conf "conf-test.conf")
+    (setf (gethash :field-1 expected-hash) "value1"
+          (gethash :field-2 expected-hash) "value2")
+    (conf::save-conf-file conf expected-hash)
+    (and (equalp expected-hash (conf::load-conf-file-for-hash-table conf)))))
