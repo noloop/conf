@@ -105,7 +105,7 @@ The replace-conf function will only ask you what you have in your configuration 
 
 ```lisp
 (:author "Unknown"
-:maintainer ":AUTHOR"
+:maintainer "you"
 :license "UNLICENSED"
 :version "0.0.0"
 :git-service "github")
