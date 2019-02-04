@@ -7,4 +7,5 @@
            #:set-conf-file
            #:get-conf-file
            #:get-conf-full-path
-           #:replace-conf))
+           #:replace-conf
+           #:get-conf-hash))

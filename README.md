@@ -98,6 +98,15 @@ _**Note: Remember to configure asdf to find your directory where you downloaded 
 ;; CL-USER> "/home/your/some/my-file.conf"
 ```
 
+### Get conf hash
+
+```lisp
+(let ((conf (init-conf "~/lisp/config/" "my-system.conf")))
+     (get-conf-hash conf))
+
+;; #<HASH-TABLE :TEST EQL :COUNT 5 {10033E4713}>
+```
+
 ### Replace conf
 The replace-conf is a function that requires user interaction, so you will have to answer some questions she will ask you to configure your file. It works like this:
 
@@ -154,6 +163,8 @@ function **(set-conf-file conf new-file-name)**
 function **(get-conf-file conf)**
 
 function **(get-conf-full-path conf)**
+
+funtion **(get-conf-hash conf)**
 
 function **(replace-conf conf)**
 

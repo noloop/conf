@@ -29,6 +29,9 @@ Configuration file example(my-file.conf):
 (defun get-conf-full-path (conf)
   (concatenate 'string (get-conf-directory conf) (get-conf-file conf)))
 
+(defun get-conf-hash (conf)
+  (load-conf-file-for-hash-table conf))
+
 (defun replace-conf (conf)
   (let ((new-conf (load-conf-file-for-hash-table conf)))
     (replace-conf-fields new-conf)
