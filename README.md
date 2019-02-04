@@ -164,7 +164,7 @@ function **(get-conf-file conf)**
 
 function **(get-conf-full-path conf)**
 
-funtion **(get-conf-hash conf)**
+function **(get-conf-hash conf)**
 
 function **(replace-conf conf)**
 
