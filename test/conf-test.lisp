@@ -34,18 +34,18 @@
 (defun test-set-conf-directory ()
   (let ((conf (init-conf "~/.conf/" "some.conf")))
     (set-conf-directory conf "/tmp/")
-    (and (string= "/tmp/" (get-conf-directory conf)))))
+    (and (cl-fad:pathname-equal "/tmp/" (get-conf-directory conf)))))
 
 (defun test-set-conf-file ()
   (let ((conf (init-conf "~/.conf/" "some.conf")))
     (set-conf-file conf "conf-test.conf")
-    (and (string= "conf-test.conf" (get-conf-file conf)))))
+    (and (cl-fad:pathname-equal "conf-test.conf" (get-conf-file conf)))))
 
 (defun test-get-conf-full-path ()
   (let ((conf (init-conf "~/.conf/" "some.conf")))
     (set-conf-directory conf "/tmp/")
     (set-conf-file conf "conf-test.conf")
-    (and (string= "/tmp/conf-test.conf" (get-conf-full-path conf)))))
+    (and (cl-fad:pathname-equal "/tmp/conf-test.conf" (get-conf-full-path conf)))))
 
 (defun test-get-conf-hash ()
   (let ((conf (init-conf "~/.conf/" "some.conf"))
