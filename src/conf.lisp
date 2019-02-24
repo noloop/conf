@@ -27,7 +27,9 @@ Configuration file example(my-file.conf):
   (cdr (assoc :conf-file-name conf)))
 
 (defun get-conf-full-path (conf)
-  (concatenate 'string (get-conf-directory conf) (get-conf-file conf)))
+  (merge-pathnames-as-file
+   (get-conf-directory conf)
+   (get-conf-file conf)))
 
 (defun get-conf-hash (conf)
   (load-conf-file-for-hash-table conf))
@@ -89,3 +91,4 @@ Configuration file example(my-file.conf):
   (with-open-file (in file-name)
     (with-standard-io-syntax
       (read in))))
+

@@ -4,11 +4,12 @@
   :author "noloop <noloop@zoho.com>"
   :maintainer "noloop <noloop@zoho.com>"
   :license "GNU General Public License v3.0"
-  :version "0.0.0"
+  :version "1.0.0"
   :homepage "https://github.com/noloop/conf"
   :bug-tracker "https://github.com/noloop/conf/issues"
   :source-control (:git "git@github.com:noloop/conf.git")
   :description "Simple configuration file manipulator for projects."
+  :depends-on (:cl-fad)
   :components ((:module "src"
                 :components
                 ((:file "package")

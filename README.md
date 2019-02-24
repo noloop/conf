@@ -6,7 +6,7 @@
 
 ### Dependencies
 
-The conf library has no dependencies.
+[cl-fad](https://github.com/edicl/cl-fad)
 
 ### Installation
 
