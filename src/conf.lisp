@@ -26,11 +26,6 @@ Configuration file example(my-file.conf):
 (defun get-conf-file (conf)
   (cdr (assoc :conf-file-name conf)))
 
-(defun get-conf-full-path (conf)
-  (merge-pathnames-as-file
-   (get-conf-directory conf)
-   (get-conf-file conf)))
-
 (defun get-conf-hash (conf)
   (load-conf-file-for-hash-table conf))
 
@@ -43,6 +38,10 @@ Configuration file example(my-file.conf):
   (list-for-hash-table
    (load-file (get-conf-full-path conf))))
 
+(defun get-conf-full-path (conf)
+  (merge-pathnames-as-file
+   (get-conf-directory conf)
+   (get-conf-file conf)))
 
 (defun replace-conf-fields (your-hash)
   (maphash #'(lambda (key value)
@@ -85,7 +84,7 @@ Configuration file example(my-file.conf):
                        :if-exists :supersede)
     (with-standard-io-syntax
       (format out "~a" stg)))
-  (format t "~%File saved successfully."))
+  (format t "~%File saved successfully.~%"))
 
 (defun load-file (file-name)
   (with-open-file (in file-name)
