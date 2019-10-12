@@ -3,7 +3,7 @@
 (defsystem :conf
   :author "noloop <noloop@zoho.com>"
   :maintainer "noloop <noloop@zoho.com>"
-  :license "GNU General Public License v3.0"
+  :license "GPLv3"
   :version "1.0.1"
   :homepage "https://github.com/noloop/conf"
   :bug-tracker "https://github.com/noloop/conf/issues"

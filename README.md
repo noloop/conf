@@ -8,31 +8,23 @@
 
 [cl-fad](https://github.com/edicl/cl-fad)
 
-### Installation
+### Download and load
 
-**1 - Download conf system**
-
-By quicklisp:
+**1 - Load conf system by quicklisp**
 
 ```
-IN PROGRESS...
+(ql:quickload :conf)
 ```
 
-or directly from github:
+**2 - Download and Load conf system by github and asdf**
+
+Download directly from github:
 
 ```
 git clone https://github.com/noloop/conf.git
 ```
 
-**2 - Install conf**
-
-By quicklisp:
-
-```
-IN PROGRESS...
-```
-
-or directly from asdf:
+and load by ASDF:
 
 ```lisp
 (asdf:load-system :conf)
