@@ -14,9 +14,6 @@
                 :components
                 ((:file "package")
                  (:file "conf" :depends-on ("package")))))
-  :long-description
-  #.(uiop:read-file-string
-     (uiop:subpathname *load-pathname* "README.md"))
   :in-order-to ((test-op (test-op "conf/test"))))
 
 (defsystem :conf/test
